@@ -1,21 +1,21 @@
 <ion-view title="Login" id="page5">
   <ion-content padding="true" class="has-header">
     <form id="login-form1" class="list">
-      <ion-checkbox id="login-checkbox3">Checkbox</ion-checkbox>
-      <ion-checkbox id="login-checkbox4">Checkbox</ion-checkbox>
+      <ion-radio ng-model="choice" value="vendedor" name="tipo">Vendedor</ion-radio>
+      <ion-radio ng-model="choice" value="cliente" name="tipo">Cliente</ion-radio>
       <div class="spacer" style="width: 300px; height: 46px;"></div>
       <ion-list id="login-list1">
         <label class="item item-input" id="login-input1">
           <span class="input-label">Username</span>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" id="user">
         </label>
         <label class="item item-input" id="login-input2">
           <span class="input-label">Password</span>
-          <input type="password" placeholder="">
+          <input type="password" placeholder="" id="pass">
         </label>
       </ion-list>
       <div class="spacer" style="height: 40px;"></div>
-      <a ui-sref="home" id="login-button1" class="button button-stable  button-block">Log in</a>
+      <a ng-click="validar()" id="login-button1" class="button button-stable  button-block">Log in</a>
       <a href-inappbrowser="/signup" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
     </form>
   </ion-content>

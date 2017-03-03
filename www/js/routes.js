@@ -51,7 +51,7 @@ angular.module('app.routes', [])
   .state('tabsController.cerdo', {
     url: '/cerdo',
     views: {
-      'tab1': {
+      'cerdo': {
         templateUrl: 'templates/cerdo.html',
         controller: 'cerdoCtrl'
       }
@@ -61,7 +61,7 @@ angular.module('app.routes', [])
   .state('tabsController.vaca', {
     url: '/vaca',
     views: {
-      'tab4': {
+      'vaca': {
         templateUrl: 'templates/vaca.html',
         controller: 'vacaCtrl'
       }
@@ -71,7 +71,7 @@ angular.module('app.routes', [])
   .state('tabsController.embu', {
     url: '/embutido',
     views: {
-      'tab5': {
+      'embu': {
         templateUrl: 'templates/embu.html',
         controller: 'embuCtrl'
       }

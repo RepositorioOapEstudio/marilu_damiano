@@ -5,9 +5,9 @@ class Conexion
 	private static $ObjetoAccesoDatos;
     private $objetoPDO;
  	
- 	private $host = 'mysql:host=localhost;dbname=marilumariano;charset=utf8';
- 	private $usuario = "";
-    private $clave = "";
+ 	private $host ='mysql:host=localhost;dbname=marilumariano;charset=utf8';
+ 	private $usuario ="root";
+    private $clave ="";
 
     private function __construct()
     {

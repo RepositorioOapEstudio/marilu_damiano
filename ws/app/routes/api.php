@@ -10,6 +10,43 @@ if(!defined("SPECIALCONSTANT")) die("Acceso denegado");
 
 // GET: Para consultar y leer recursos
 						
+$app->post("/login/", function() use($app)
+{
+	try{
+
+			$post =json_decode($app->request()->getbody());
+			
+			$postArray = get_object_vars($post);
+			
+			$user = $postArray["user"];
+			$pass =$postArray["pass"];
+			$tipo =$postArray["tipo"];
+			// $user = $app->request->post("user");
+			// $pass = $app->request->post("pass");
+			
+			// $user = "brian";
+			// $pass ="ojeda";
+			//var_dump($_POST);
+			$cnn = Conexion::DameAcceso();
+			
+			$sentencia = $cnn->prepare("CALL LoginVendedor(?,?)");
+		
+			
+			//$sentencia->bindValue(':user',$user, PDO::PARAM_STR);
+			//$sentencia->bindValue(':pass',$pass, PDO::PARAM_STR);
+			$status = 200;
+			$sentencia->execute(array($user,$pass));
+			$res = $sentencia->fetchAll(PDO::FETCH_OBJ);
+			//$app->response->headers->set("Content-type", "application/json");
+			$app->response->status($status);
+			$app->response->body(json_encode($res));
+
+	}
+	catch(PDOException $e)
+	{
+		echo "Error: " . $e->getMessage();
+	}
+});
 
 $app->get("/listacarne/:id", function($id) use($app)
 {

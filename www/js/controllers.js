@@ -30,7 +30,7 @@ function ($scope, $stateParams) {
 }])
       
 .controller('loginCtrl',function($scope, $stateParams,$http) {
-
+//pablo se la come doblada
 
 	$scope.validar=function()
    {
